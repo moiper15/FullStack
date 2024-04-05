@@ -1,0 +1,18 @@
+participant Usuario
+participant Navegador
+participant Servidor
+
+Usuario->>Navegador: Ingresa a https://studies.cs.helsinki.fi/exampleapp/spa
+Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/spa
+activate Servidor
+Servidor-->>Navegador: Devuelve el archivo HTML de la SPA
+deactivate Servidor
+Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+activate Servidor
+Servidor-->>Navegador: Devuelve el archivo CSS de la SPA
+deactivate Servidor
+Navegador->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+activate Servidor
+Servidor-->>Navegador: Devuelve el archivo JavaScript de la SPA
+deactivate Servidor
+Navegador->>Navegador: Renderiza la SPA utilizando HTML, CSS y JavaScript

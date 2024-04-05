@@ -1,0 +1,12 @@
+participant Usuario
+participant Navegador
+participant SPA
+
+Usuario->>Navegador: Escribe una nueva nota en el campo de texto
+Navegador->>Usuario: Muestra la nota ingresada en el campo de texto
+
+Navegador->>SPA: Envia la solicitud de creación de nota
+activate SPA
+SPA->>SPA: Procesa la solicitud de creación de nota
+SPA-->>Navegador: Respuesta 200 OK
+deactivate SPA

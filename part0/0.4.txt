@@ -1,0 +1,11 @@
+participant Usuario
+participant Navegador
+participant Servidor
+
+Usuario->>Navegador: Escribe una nueva nota en el campo de texto
+Navegador->>Usuario: Muestra la nota ingresada en el campo de texto
+
+Navegador->>Servidor: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+activate Servidor
+Servidor-->>Navegador: Respuesta 200 OK
+deactivate Servidor
